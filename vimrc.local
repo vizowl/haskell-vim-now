@@ -1,0 +1,9 @@
+if has("gui_vimr")
+  "
+else
+  set guifont=Source\ Code\ Pro:h15
+endif
+
+colorscheme seagull
+let g:sql_type_default = 'pgsql'
+let g:R_assign = 2

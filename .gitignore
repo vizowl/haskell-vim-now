@@ -1,7 +1,5 @@
 .DS_Store
 .vim
-*.vim
-*.local
 *.local.*
 .stack
 .stack-*

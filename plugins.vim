@@ -1,0 +1,10 @@
+Plug 'ElmCast/elm-vim'
+Plug 'jalvesaq/Nvim-R'
+Plug 'lifepillar/pgsql.vim'
+Plug 'ivalkeen/vim-simpledb'
+Plug 'parsonsmatt/intero-neovim'
+Plug 'chemzqm/vim-jsx-improve'
+Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+Plug 'nightsense/seabird'
+Plug 'mhartington/oceanic-next'
+Plug 'LnL7/vim-nix'
