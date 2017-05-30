@@ -6,7 +6,7 @@ endif
 if has("gui_running")
   colorscheme seagull
 else
-  colorscheme OceanicNext
+  colorscheme OceanicNextLight
 endif
 let g:sql_type_default = 'pgsql'
 let g:R_assign = 2
