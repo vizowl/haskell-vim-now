@@ -388,7 +388,7 @@ bash <(curl -sL INSTALL-SCRIPT-URL) --repo FORK-URL
 For example:
 
 ```sh
-bash <(curl -sL https://raw.githubusercontent.com/begriffs/haskell-vim-now/master/install.sh) --repo https://github.com/begriffs/haskell-vim-now
+bash <(curl -sL https://raw.githubusercontent.com/vizowl/haskell-vim-now/master/install.sh) --repo https://github.com/vizowl/haskell-vim-now
 ```
 
 If you have a local git clone you can use `install.sh` directly
