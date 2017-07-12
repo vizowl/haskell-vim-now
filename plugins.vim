@@ -4,8 +4,9 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'ivalkeen/vim-simpledb'
 if has('nvim')
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
-"Plug 'parsonsmatt/intero-neovim'
+Plug 'parsonsmatt/intero-neovim'
 endif
 Plug 'nightsense/seabird'
 Plug 'mhartington/oceanic-next'
 Plug 'LnL7/vim-nix'
+Plug 'tpope/vim-surround'

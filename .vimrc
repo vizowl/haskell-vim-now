@@ -259,7 +259,9 @@ endif
 set ffs=unix,dos,mac
 
 " Use large font by default in MacVim
+if !has("gui_vimr")
 set gfn=Monaco:h19
+endif
 
 " Use powerline fonts for airline
 if !exists('g:airline_symbols')
