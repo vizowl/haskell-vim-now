@@ -10,25 +10,43 @@ let g:sql_type_default = 'pgsql'
 let g:R_assign = 2
 
 if has('nvim')
-" Process management:
-nnoremap <Leader>hio :InteroOpen<CR>
-nnoremap <Leader>hik :InteroKill<CR>
-nnoremap <Leader>hic :InteroHide<CR>
-nnoremap <Leader>hil :InteroLoadCurrentModule<CR>
 
-" REPL commands
-nnoremap <Leader>hie :InteroEval<CR>
-nnoremap <Leader>hit :InteroGenericType<CR>
-nnoremap <Leader>hiT :InteroType<CR>
-nnoremap <Leader>hii :InteroInfo<CR>
-nnoremap <Leader>hiI :InteroTypeInsert<CR>
+augroup interoMaps
+  au!
+  " Maps for intero. Restrict to Haskell buffers so the bindings don't collide.
 
-" Go to definition:
-nnoremap <Leader>hid :InteroGoToDef<CR>
+  " Background process and window management
+  au FileType haskell nnoremap <silent> <leader>is :InteroStart<CR>
+  au FileType haskell nnoremap <silent> <leader>ik :InteroKill<CR>
 
-" Highlight uses of identifier:
-nnoremap <Leader>hiu :InteroUses<CR>
+  " Open intero/GHCi split horizontally
+  au FileType haskell nnoremap <silent> <leader>io :InteroOpen<CR>
+  " Open intero/GHCi split vertically
+  au FileType haskell nnoremap <silent> <leader>iov :InteroOpen<CR><C-W>H
+  au FileType haskell nnoremap <silent> <leader>ih :InteroHide<CR>
 
-" Reload the file in Intero after saving
-autocmd! BufWritePost *.hs InteroReload
+  " Reloading (pick one)
+  " Automatically reload on save
+  au BufWritePost *.hs InteroReload
+  " Manually save and reload
+  au FileType haskell nnoremap <silent> <leader>wr :w \| :InteroReload<CR>
+
+  " Load individual modules
+  au FileType haskell nnoremap <silent> <leader>il :InteroLoadCurrentModule<CR>
+  au FileType haskell nnoremap <silent> <leader>if :InteroLoadCurrentFile<CR>
+
+  " Type-related information
+  " Heads up! These next two differ from the rest.
+  au FileType haskell map <silent> <leader>t <Plug>InteroGenericType
+  au FileType haskell map <silent> <leader>T <Plug>InteroType
+  au FileType haskell nnoremap <silent> <leader>it :InteroTypeInsert<CR>
+
+  " Navigation
+  au FileType haskell nnoremap <silent> <leader>jd :InteroGoToDef<CR>
+
+  " Managing targets
+  " Prompts you to enter targets (no silent):
+  au FileType haskell nnoremap <leader>ist :InteroSetTargets<SPACE>
+augroup END
+
 endif
