@@ -10,3 +10,12 @@ Plug 'nightsense/seabird'
 Plug 'mhartington/oceanic-next'
 Plug 'LnL7/vim-nix'
 Plug 'tpope/vim-surround'
+
+Plug 'jremmen/vim-ripgrep'
+Plug 'vmchale/ripgrep-haskell'
+Plug 'nbouscal/vim-stylish-haskell'
+Plug 'vmchale/hask-replace-vim'
+Plug 'glittershark/vim-hare'
+
+Plug 'Rykka/InstantRst'
+Plug 'Rykka/riv.vim'
