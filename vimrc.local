@@ -27,7 +27,7 @@ augroup interoMaps
 
   " Reloading (pick one)
   " Automatically reload on save
-  au BufWritePost *.hs InteroReload
+  " au BufWritePost *.hs InteroReload
   " Manually save and reload
   au FileType haskell nnoremap <silent> <leader>wr :w \| :InteroReload<CR>
 
@@ -49,8 +49,57 @@ augroup interoMaps
   au FileType haskell nnoremap <leader>ist :InteroSetTargets<SPACE>
 augroup END
 
+let g:intero_start_immediately = 0
+
+augroup ghciMaps
+  au!
+  " Maps for ghci. Restrict to Haskell buffers so the bindings don't collide.
+
+  " Background process and window management
+  au FileType haskell nnoremap <silent> <leader>gs :GhciStart<CR>
+  au FileType haskell nnoremap <silent> <leader>gk :GhciKill<CR>
+
+  " Open GHCi split horizontally
+  au FileType haskell nnoremap <silent> <leader>go :GhciOpen<CR>
+  " Open GHCi split vertically
+  au FileType haskell nnoremap <silent> <leader>gov :GhciOpen<CR><C-W>H
+  au FileType haskell nnoremap <silent> <leader>gh :GhciHide<CR>
+
+  " RELOADING (PICK ONE):
+
+  " Automatically reload on save
+  au BufWritePost *.hs GhciReload
+  " Manually save and reload
+  au FileType haskell nnoremap <silent> <leader>wr :w \| :GhciReload<CR>
+
+  " Load individual modules
+  au FileType haskell nnoremap <silent> <leader>gl :GhciLoadCurrentModule<CR>
+  au FileType haskell nnoremap <silent> <leader>gf :GhciLoadCurrentFile<CR>
+augroup END
+
+let g:ghci_command = 'stack ghci'
+let g:ghci_command_line_options = '--ghci-options fobject-code'
+
 endif
 
 
 " CtrlP
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" JS/JSX
+let g:jsx_ext_required = 0
+let g:javascript_plugin_flow = 1
+
+" Markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_math = 1
+
+set autoread
+set noignorecase
+set nostartofline
+
+let g:flow#autoclose = 1
+
+
+let g:simpledb_use_default_keybindings = 0

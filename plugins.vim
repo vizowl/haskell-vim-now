@@ -5,6 +5,7 @@ Plug 'ivalkeen/vim-simpledb'
 if has('nvim')
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'parsonsmatt/intero-neovim'
+Plug 'owickstrom/neovim-ghci'
 endif
 Plug 'nightsense/seabird'
 Plug 'mhartington/oceanic-next'
@@ -19,3 +20,13 @@ Plug 'glittershark/vim-hare'
 
 Plug 'Rykka/InstantRst'
 Plug 'Rykka/riv.vim'
+
+Plug 'pangloss/vim-javascript'
+Plug 'chemzqm/vim-jsx-improve'
+"Plug 'mxw/vim-jsx'
+Plug 'leshill/vim-json'
+Plug 'flowtype/vim-flow', { 'for': 'javascript' }
+
+" Markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
